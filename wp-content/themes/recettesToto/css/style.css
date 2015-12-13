@@ -65,8 +65,16 @@ li {
 	overflow: hidden;
 	height: 300px;
 }
+.articles {
+	width: 100%;
+}
 
-
-article {
-
+.articles article {
+	width: 45%;
+	display: inline-block;
+}
+.article__thumbnail, .article__content {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
 }

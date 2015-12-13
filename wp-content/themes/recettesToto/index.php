@@ -14,48 +14,54 @@
  * @since Twenty Fifteen 1.0
  */
 
-get_header(); ?>
+?>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?> class="no-js">
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<!--[if lt IE 9]>
+	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
+	<![endif]-->
+	<link href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/style.css" rel="stylesheet">
+</head>
+<body <?php body_class(); ?>>
+	<div class="main">
+		<?php get_sidebar(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<section class="content">
+			<div class="articles">
+				<?php
 
-		<?php if ( have_posts() ) : ?>
+					if ( have_posts() ) :
+						while ( have_posts() ) : the_post();
+							/*
+							 * Include the Post-Format-specific template for the content.
+							 * If you want to override this in a child theme, then include a file
+							 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+							 */
 
-			<?php if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-			<?php endif; ?>
+							get_template_part( 'content', get_post_format() );
+							// End the loop.
+						endwhile;
 
-			<?php
-			// Start the loop.
-			while ( have_posts() ) : the_post();
+						// Previous/next page navigation.
+						the_posts_pagination( array(
+							'prev_text'          => __( 'Previous page', 'twentyfifteen' ),
+							'next_text'          => __( 'Next page', 'twentyfifteen' ),
+							'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyfifteen' ) . ' </span>',
+						) );
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'content', get_post_format() );
+					// If no content, include the "No posts found" template.
+					else :
+						get_template_part( 'content', 'none' );
+					endif;
+				?>
+			</div>
+		</section>
+	</div>
 
-			// End the loop.
-			endwhile;
-
-			// Previous/next page navigation.
-			the_posts_pagination( array(
-				'prev_text'          => __( 'Previous page', 'twentyfifteen' ),
-				'next_text'          => __( 'Next page', 'twentyfifteen' ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyfifteen' ) . ' </span>',
-			) );
-
-		// If no content, include the "No posts found" template.
-		else :
-			get_template_part( 'content', 'none' );
-
-		endif;
-		?>
-
-		</main><!-- .site-main -->
-	</div><!-- .content-area -->
-
-<?php get_footer(); ?>
+	<?php get_footer(); ?>
