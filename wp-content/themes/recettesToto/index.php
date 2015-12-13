@@ -33,6 +33,9 @@
 		<?php get_sidebar(); ?>
 
 		<section class="content">
+
+	
+
 			<div class="articles">
 				<?php
 
@@ -54,7 +57,19 @@
 					endif;
 				?>
 			</div>
+
+
 		</section>
+
+
+
+	</div>
+	<div class="titreSection salee">
+		Recettes Salées
+
+	</div>
+	<div class="titreSection sucree">
+		Recettes Sucrées
 	</div>
 
 	<?php get_footer(); ?>
