@@ -67,14 +67,33 @@ li {
 }
 .articles {
 	width: 100%;
+
 }
 
 .articles article {
-	width: 45%;
 	display: inline-block;
+	background: #ffd;
+	width: 100%;
 }
 .article__thumbnail, .article__content {
     display: inline-block;
     vertical-align: top;
-    width: 50%;
+	max-width: 50%;
+}
+
+.no-gutter {
+	margin: 0;
+	padding: 0;
+}
+
+.article__content {
+	padding: 25px;
+}
+
+.article__content a {
+	color: #000;
+}
+.article__thumbnail img {
+	width: 250px;
+	height: 250px;
 }

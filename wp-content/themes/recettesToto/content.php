@@ -10,21 +10,23 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<div class="col-md-6 col-xs-12 no-gutter">
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<div class="article__thumbnail">
-		<?php twentyfifteen_post_thumbnail(); ?>
-	</div>
+		<div class="article__thumbnail">
+			<?php twentyfifteen_post_thumbnail(); ?>
+		</div>
 
-	<div class="article__content">
-		<?php
-			if ( is_single() ) :
-				the_title( '<h1 class="entry-title">', '</h1>' );
-			else :
-				the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
-			endif;
-		?>
-		<?php the_content(); ?>
-	</div>
+		<div class="article__content">
+			<?php
+				if ( is_single() ) :
+					the_title( '<h1 class="entry-title">', '</h1>' );
+				else :
+					the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+				endif;
+			?>
+			<?php the_content(); ?>
+		</div>
 
-</article>
+	</article>
+</div>
