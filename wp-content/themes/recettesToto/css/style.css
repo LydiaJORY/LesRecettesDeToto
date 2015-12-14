@@ -55,10 +55,13 @@ li {
 
 
 }
-
-.stickyArticle img {
-	width: 100%;
-	
+.stickyArticle__cover {
+    height: 250px;
+    overflow: hidden;
+}
+.stickyArticle__cover img {
+    width: 100%;
+    transform: translateY(-50%);
 }
 
 .banner {

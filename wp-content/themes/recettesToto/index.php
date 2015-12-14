@@ -34,15 +34,36 @@
 
 		<section class="content">
 
-	
+			<div class="stickyAricle">
+				<?php
+					$query = new WP_Query( array(
+						'posts_per_page'      => 1,
+						'post__in'            => get_option( 'sticky_posts' ),
+						'ignore_sticky_posts' => 1,
+					) );
+					$query->the_post();
+				?>
+				<a href="<?php esc_url( the_permalink() ) ?>">
+					<div class="stickyArticle__cover">
+						<?php
+							the_post_thumbnail( 'full');
+						?>
+					</div>
+					<div class="stickyArticle__content">
+						<h1 class="stickyArticle__title"><?php the_title(); ?></h1>
+						<?php the_excerpt(); ?>
+					</div>
+				</a>
+			</div>
+				
+
 				<div class="titreSection salee">
 					Recettes Salées
-
 				</div>
 			<div class="articles">
 				<?php
 
-				$query = new WP_Query( array( 'category_name' => 'recettes-salees' ) );
+				$query = new WP_Query( array( 'category_name' => 'recettes-salees', 'posts_per_page' => 4 ) );
 
 					if ( $query->have_posts() ):
 						while ( $query->have_posts() ) : $query->the_post();
@@ -75,7 +96,7 @@
 			<div class="articles">
 				<?php
 
-				$query = new WP_Query( array( 'category_name' => 'recettes-sucrees' ) );
+				$query = new WP_Query( array( 'category_name' => 'recettes-sucrees', 'posts_per_page' => 4 ) );
 
 					if ( $query->have_posts() ):
 						while ( $query->have_posts() ) : $query->the_post();
