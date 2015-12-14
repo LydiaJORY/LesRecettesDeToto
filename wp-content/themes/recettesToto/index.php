@@ -35,12 +35,50 @@
 		<section class="content">
 
 	
+				<div class="titreSection salee">
+					Recettes Salées
+
+				</div>
+			<div class="articles">
+				<?php
+
+				$query = new WP_Query( array( 'category_name' => 'recettes-salees' ) );
+
+					if ( $query->have_posts() ):
+						while ( $query->have_posts() ) : $query->the_post();
+							/*
+							 * Include the Post-Format-specific template for the content.
+							 * If you want to override this in a child theme, then include a file
+							 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+							 */
+
+							get_template_part( 'content', get_post_format() );
+							// End the loop.
+						endwhile;
+
+					// If no content, include the "No posts found" template.
+					else :
+						get_template_part( 'content', 'none' );
+					endif;
+				?>
+			</div>
+			
+			<div>
+				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/banniere_ustencile.png" alt="">
+			</div>
+
+
+			<div class="titreSection sucree">
+				Recettes Sucrées
+			</div>
 
 			<div class="articles">
 				<?php
 
-					if ( have_posts() ) :
-						while ( have_posts() ) : the_post();
+				$query = new WP_Query( array( 'category_name' => 'recettes-sucrees' ) );
+
+					if ( $query->have_posts() ):
+						while ( $query->have_posts() ) : $query->the_post();
 							/*
 							 * Include the Post-Format-specific template for the content.
 							 * If you want to override this in a child theme, then include a file
@@ -64,12 +102,6 @@
 
 
 	</div>
-	<div class="titreSection salee">
-		Recettes Salées
 
-	</div>
-	<div class="titreSection sucree">
-		Recettes Sucrées
-	</div>
 
 	<?php get_footer(); ?>
