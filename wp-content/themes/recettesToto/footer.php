@@ -9,6 +9,7 @@
  * @since Twenty Fifteen 1.0
  */
 ?>
+</div> <!-- /main -->
 <footer class="footer">
     <ul>
         <li><a href="">Les recettes de Toto, tout droit réservés ©2015</a></li>

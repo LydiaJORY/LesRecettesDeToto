@@ -15,24 +15,9 @@
  */
 
 ?>
-<!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js">
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<!--[if lt IE 9]>
-	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
-	<![endif]-->
-	<link href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/style.css" rel="stylesheet">
-</head>
-<body <?php body_class(); ?>>
-	<div class="main">
-		<?php get_sidebar(); ?>
-
-		<section class="content">
+<?php get_header(); ?>
+<?php get_sidebar(); ?>
+	<section class="content">
 
 			<div class="stickyAricle">
 				<?php
@@ -118,11 +103,6 @@
 			</div>
 
 
-		</section>
-
-
-
-	</div>
-
+	</section>
 
 	<?php get_footer(); ?>

@@ -4,12 +4,16 @@ li {
 .main {
 	display: table;
 	width: 100%;
+	min-height: 100vh;
+}
+
+.single-content {
+	padding: 100px;
 }
 .menu {
 	width: 200px;
 	background: #000;
-	height: 100%;
-	min-height:100vh;
+	height:100vh;
 }
 .menu, .content {
 	display: table-cell;
@@ -48,13 +52,11 @@ li {
 	color: #fff;
 }
 
-
 .stickyArticle {
 	width: 100%;
 	background-color: red;
-
-
 }
+
 .stickyArticle__cover {
     height: 250px;
     overflow: hidden;
@@ -70,7 +72,6 @@ li {
 }
 .articles {
 	width: 100%;
-
 }
 
 .articles article {
@@ -78,6 +79,7 @@ li {
 	background: #ffd;
 	width: 100%;
 }
+
 .article__thumbnail, .article__content {
     display: inline-block;
     vertical-align: top;
@@ -91,6 +93,13 @@ li {
 
 .article__content {
 	padding: 25px;
+}
+
+.single .article__content {
+	padding-top: 0;
+}
+.single h1 {
+	margin-top: 0;
 }
 
 .article__content a {
