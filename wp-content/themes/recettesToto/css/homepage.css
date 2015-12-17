@@ -1,0 +1,13 @@
+.stickyArticle {
+	width: 100%;
+	background-color: red;
+}
+
+.stickyArticle__cover {
+    height: 250px;
+    overflow: hidden;
+}
+.stickyArticle__cover img {
+    width: 100%;
+    transform: translateY(-50%);
+}

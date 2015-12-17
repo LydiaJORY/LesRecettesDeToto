@@ -1,0 +1,72 @@
+.logo {
+	width: 81%;
+
+}
+
+.menu {
+	width: 200px;
+	background: #000;
+	height:100vh;	
+	color: white;
+
+}
+
+.menu__rubriques {
+	font-family: 'BELLABOO', helvetica, arial, sans-serif;
+	color: #e59e0b;
+	font-size: 25px;
+	line-height: 30pt;
+
+}
+
+.logoWrap {
+	text-align: center;
+	height: 200px;
+	width:200px;
+	background-image: url("../img/patternLogo.png");
+	border-image: url("../img/borders.png") 53 51 52 56 fill repeat;
+	border-style: solid; border-width: 2px 0px 0px;
+	 -moz-border-image: url("../img/borders.png") 53 51 52 56 repeat;
+	 -webkit-border-image: url("../img/borders.png") 53 51 52 56 repeat;
+	-o-border-image: url("../img/borders.png") 53 51 52 56 repeat;
+	
+
+}
+
+.menu__recettesSalees {
+	display: block;
+	
+}
+
+
+.recettesSaleesIcone {
+	width: 30%;
+	display: inline-block;
+}
+
+.recettesSaleesTitre{
+	display: inline-block;
+	margin: 0;
+	width: 30px;
+}
+
+.aproposPicto {
+	width: 50%;
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+}
+
+.aproposTitre {
+	text-align: center;
+}
+
+.aproposDetail {
+	color: #9d9d9d;
+	font-size: 16px;
+	font-family: helvetica;
+	text-align: center;
+	line-height: 14pt;
+}
+
+
